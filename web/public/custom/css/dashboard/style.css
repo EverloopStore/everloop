@@ -1,0 +1,256 @@
+/**
+ *     Developer:  Sovgut Sergey
+ *     Teplate:    Store Yii2
+ *     Theme:      Dashboard
+ *
+ *     1   Product page
+ *     1.1 Main Colors
+ *     1.2 Row Container
+ *     1.3 Column Containers
+ *     1.4 Left Container Items
+ *     1.5 Right Container Items
+ *     1.6 Collapsed
+ *
+ *     2   Dashboard
+ *
+ *
+ */
+
+/* 1.1 Main Colors */
+:root 
+{
+      --store-light-gray-0:   #F5F7FA;
+      --store-light-gray-1:   #E6E9ED;
+      --store-medium-gray-0:  #CCD1D9;
+      --store-medium-gray-1:  #AAB2BD;
+      --store-dark-gray-0:    #656D78;
+      --store-dark-gray-1:    #434A54;
+}
+/*====================================*/
+
+/* 1.2 Row Container */
+.store-row
+{
+      position: relative;
+      background-color: var(--store-light-gray-0);
+      min-height: 100vh;
+}
+/*====================================*/
+
+/* 1.3 Columns Container */
+.store-column-left
+{
+      transition: all 200ms;
+      float: left;
+      width: 200px;
+      box-sizing: border-box;
+      height: 100vh;
+      margin: 0;
+}
+
+.store-column-right
+{
+      transition: all 200ms;
+      float: right;
+      width: calc(100% - 200px);
+      box-sizing: border-box;
+      margin: 0;
+}
+/*====================================*/
+
+/* 1.4 Left Container Items */
+
+.store-sidebar 
+{
+      background-color: var(--store-dark-gray-0);
+      position: relative;
+      overflow: hidden;
+}
+
+.store-sidebar ul a,
+.store-sidebar ul div 
+{
+      transition: all 200ms;
+      width: 100%;
+      background-color: var(--store-dark-gray-0);
+      padding: 17px;
+      color: var(--store-light-gray-1);
+      text-decoration: none;
+      font-size: 2rem;
+}
+
+.store-sidebar ul a:hover,
+.store-sidebar ul div:hover 
+{
+      background-color: var(--store-medium-gray-1);
+      color: var(--store-dark-gray-1);
+}
+
+.store-sidebar ul a.active:hover,
+.store-sidebar ul div.active:hover 
+{
+      background-color: var(--store-medium-gray-1);
+      color: var(--store-dark-gray-1);
+}
+
+.store-sidebar ul a p,
+.store-sidebar ul div p
+{
+      padding: 0px;
+      margin: 0px;
+      font-size: 10pt;
+      white-space: nowrap;
+      position: relative;
+}
+
+.store-sidebar ul a p span
+{
+      position: absolute;
+      top: 3px;
+      right: 0;
+}
+
+.store-sidebar ul a i,
+.store-sidebar ul div i
+{
+      padding: 0px;
+      margin: 0px;
+      font-size: 1rem;
+      white-space: nowrap;
+}
+
+.store-sidebar ul a.active
+{
+      background-color: var(--store-medium-gray-0);
+      color: var(--store-dark-gray-1);
+}
+
+.store-sidebar ul a i,
+.store-sidebar ul div i 
+{
+      float: left;
+      margin-right: 10px;
+      padding: 2px;
+}
+
+.store-sidebar ul div:last-child
+{
+      position: absolute;
+      cursor: pointer;
+      bottom: 0;
+}
+
+.store-sidebar ul a:first-child
+{
+      color: var(--store-light-gray-0);
+      background-color: var(--store-dark-gray-1);
+      font-weight: bolder;
+      padding: 0 15px;
+      text-decoration: none;
+      height: 54px;
+}
+
+.store-sidebar ul a:first-child:hover
+{
+      background-color: inherit;
+      color: var(--store-light-gray-0);
+}
+
+.store-sidebar .list-group-item:last-child 
+{
+      border-radius: 0;
+}
+/*====================================*/
+
+/* 1.5 Right Container Items */
+.store-column-right .navbar 
+{
+      background-color: var(--store-light-gray-1);
+      display: block;
+}
+.store-column-right .input-group .disabled 
+{
+      display: none;
+}
+
+.store-column-right .input-group .form-group
+{
+      margin-bottom: 0;
+}
+
+.store-column-right .input-group .store-input
+{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+}
+
+.store-column-right .title 
+{
+      padding: 0;
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--store-dark-gray-0);
+}
+.store-column-right .navbar .dropdown 
+{
+      float: right;
+}
+.store-column-right .container-fluid
+{
+      padding: 0;
+      overflow-y: scroll;
+      max-height: calc(100vh - 54px);
+      min-height: calc(100vh - 54px);
+}
+.store-column-right .container-fluid::-webkit-scrollbar
+{
+      width: 10px;
+      height: 10px;
+      background: var(--store-medium-gray-0);
+}
+
+.store-column-right .container-fluid::-webkit-scrollbar-thumb
+{
+      transition: all 200ms;
+      background: var(--store-medium-gray-1);
+}
+.store-column-right .container-fluid::-webkit-scrollbar-thumb:hover
+{
+      background: var(--store-dark-gray-0);
+}
+
+/*====================================*/
+
+/* 1.6 Collapsed */
+.store-column-right.collapsed
+{
+      width: calc(100% - 55px);
+}
+
+.store-sidebar ul a p.collapsed,
+.store-sidebar ul div p.collapsed
+{
+      width: 0px;
+      opacity: 0;
+}
+
+.store-sidebar ul > a.collapsed
+{
+      height: 0px !important;
+      padding: 0px !important;
+      margin: 0px !important;
+      font-size: 0px !important;
+}
+
+.store-sidebar ul div:last-child > i.collapsed
+{
+      transform: rotate(180deg);
+}
+
+.store-column-left.collapsed
+{
+      width: 55px;
+}
+
+/*====================================*/

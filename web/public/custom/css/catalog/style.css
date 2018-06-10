@@ -1,0 +1,65 @@
+/**
+ *     Developer:  Sovgut Sergey
+ *     Teplate:    Store Yii2
+ *     Theme:      Dashboard
+ *
+ *     1. Main Colors
+ *     2. Row Container
+ *     3. Column Containers
+ *     4. Left Container Items
+ *     5. Right Container Items
+ *     6. Collapsed
+ */
+
+/* 1. Main Colors */
+:root 
+{
+      --store-light-gray-0:   #F5F7FA;
+      --store-light-gray-1:   #E6E9ED;
+      --store-medium-gray-0:  #CCD1D9;
+      --store-medium-gray-1:  #AAB2BD;
+      --store-dark-gray-0:    #656D78;
+      --store-dark-gray-1:    #434A54;
+}
+/*====================================*/
+
+.navbar{
+      background-color: #fff;
+}
+
+
+/*2. Lest Menu */
+/*====================================*/
+.categiresBlock , 
+.tegsBlock{
+      padding: 20px;
+      margin-bottom: 40px;
+      background: var(--store-light-gray-0);
+}
+.categiresBlock .nav ,
+.tegsBlock .nav
+
+{
+      margin-left: 20px;
+     
+}
+
+
+
+/*====================================*/
+
+.priceRenge{
+      margin-bottom:20px;
+}
+.priceRenge label {
+      width: 50px;
+}
+.priceRenge input{
+      width: calc(100% - 60px);
+}
+
+
+.navbarContent{
+      background: #434A54;
+      padding:20px;
+}

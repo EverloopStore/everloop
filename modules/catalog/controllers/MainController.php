@@ -2,8 +2,8 @@
 
 namespace app\modules\catalog\controllers;
 
+use Yii;
 use yii\web\Controller;
-
 /**
  * Default controller for the `catalog` module
  */
@@ -17,4 +17,5 @@ class MainController extends Controller
     {
         return $this->render('index');
     }
+
 }

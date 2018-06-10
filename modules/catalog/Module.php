@@ -10,6 +10,7 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
+    public $layout = "/catalog";
     public $controllerNamespace = 'app\modules\catalog\controllers';
 
     /**

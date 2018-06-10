@@ -5,6 +5,11 @@ let _SidebarCollapseBuffer =
       isHidden: false,
 };
 
+window.onbeforeunload = function(e) {
+      const app = document.querySelector('.dashboard-app');
+            app.classList.add('fadeout');
+};
+
 // Realization
 function StoreActiveLink()
 {
@@ -62,7 +67,7 @@ function StoreSideBarHide()
             p.forEach( node => 
             {
                   node.classList.add('collapsed');
-            });
+            });   
 }
 
 function StoreSideBarShow()

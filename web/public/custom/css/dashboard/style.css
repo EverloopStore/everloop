@@ -12,19 +12,21 @@
  *     1.6 Collapsed
  *
  *     2   Dashboard
- *
+ *     2.1 Root
  *
  */
+
+ @import url('https://fonts.googleapis.com/css?family=Didact+Gothic&subset=cyrillic');
 
 /* 1.1 Main Colors */
 :root 
 {
-      --store-light-gray-0:   #F5F7FA;
-      --store-light-gray-1:   #E6E9ED;
-      --store-medium-gray-0:  #CCD1D9;
-      --store-medium-gray-1:  #AAB2BD;
-      --store-dark-gray-0:    #656D78;
-      --store-dark-gray-1:    #434A54;
+      --store-background:           #ebebeb;
+      --store-app:                  white;
+      --store-app-background:       #f9f9f9;
+      --store-theme:                #13ea8c;
+      --store-theme-transparent:    #13ea8d85;
+      --store-font:                 rgb(50, 50, 50);
 }
 /*====================================*/
 
@@ -32,8 +34,8 @@
 .store-row
 {
       position: relative;
-      background-color: var(--store-light-gray-0);
-      min-height: 100vh;
+      background-color: var(--store-app-background);
+      min-height: calc(100vh - 20px);
 }
 /*====================================*/
 
@@ -44,7 +46,7 @@
       float: left;
       width: 200px;
       box-sizing: border-box;
-      height: 100vh;
+      height: calc(100vh - 20px);
       margin: 0;
 }
 
@@ -62,7 +64,8 @@
 
 .store-sidebar 
 {
-      background-color: var(--store-dark-gray-0);
+      background-color: var(--store-app);
+      border-right: 1px solid rgb(240, 240, 240);
       position: relative;
       overflow: hidden;
 }
@@ -77,20 +80,13 @@
       color: var(--store-light-gray-1);
       text-decoration: none;
       font-size: 2rem;
+      position: relative;
 }
 
-.store-sidebar ul a:hover,
-.store-sidebar ul div:hover 
+.store-sidebar ul a:hover i,
+.store-sidebar ul div:hover i
 {
-      background-color: var(--store-medium-gray-1);
-      color: var(--store-dark-gray-1);
-}
-
-.store-sidebar ul a.active:hover,
-.store-sidebar ul div.active:hover 
-{
-      background-color: var(--store-medium-gray-1);
-      color: var(--store-dark-gray-1);
+      opacity: 1;
 }
 
 .store-sidebar ul a p,
@@ -98,7 +94,7 @@
 {
       padding: 0px;
       margin: 0px;
-      font-size: 10pt;
+      font-size: 1rem;
       white-space: nowrap;
       position: relative;
 }
@@ -106,8 +102,10 @@
 .store-sidebar ul a p span
 {
       position: absolute;
-      top: 3px;
+      top: 4px;
       right: 0;
+      background-color: var(--store-background);
+      color: var(--store-font);
 }
 
 .store-sidebar ul a i,
@@ -117,12 +115,24 @@
       margin: 0px;
       font-size: 1rem;
       white-space: nowrap;
+      opacity: .25;
+      transition: all 200ms;
 }
 
-.store-sidebar ul a.active
+.store-sidebar ul a.active i
 {
-      background-color: var(--store-medium-gray-0);
-      color: var(--store-dark-gray-1);
+      opacity: 1;
+}
+
+.store-sidebar ul a.active::after
+{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--store-theme);
 }
 
 .store-sidebar ul a i,
@@ -142,18 +152,11 @@
 
 .store-sidebar ul a:first-child
 {
-      color: var(--store-light-gray-0);
-      background-color: var(--store-dark-gray-1);
+      color: var(--store-font);
       font-weight: bolder;
       padding: 0 15px;
       text-decoration: none;
       height: 54px;
-}
-
-.store-sidebar ul a:first-child:hover
-{
-      background-color: inherit;
-      color: var(--store-light-gray-0);
 }
 
 .store-sidebar .list-group-item:last-child 
@@ -165,7 +168,6 @@
 /* 1.5 Right Container Items */
 .store-column-right .navbar 
 {
-      background-color: var(--store-light-gray-1);
       display: block;
 }
 .store-column-right .input-group .disabled 
@@ -196,12 +198,12 @@
 {
       float: right;
 }
-.store-column-right .container-fluid
+.store-column-right > .container-fluid
 {
       padding: 0;
       overflow-y: scroll;
-      max-height: calc(100vh - 54px);
-      min-height: calc(100vh - 54px);
+      max-height: calc(100vh - 174px);
+      min-height: calc(100vh - 174px);
 }
 .store-column-right .container-fluid::-webkit-scrollbar
 {
@@ -254,3 +256,117 @@
 }
 
 /*====================================*/
+
+
+.dashboard-root
+{
+      padding: 10px;
+      background-color: var(--store-background);
+      font-family: 'Didact Gothic', system-ui;
+}
+
+.dashboard-app
+{
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+}
+
+.dashboard-navbar
+{
+      padding: 25px;
+}
+
+.dashboard-navbar-container
+{
+      background-color: var(--store-app);
+      padding: 25px;
+      border-radius: 5px;
+      box-shadow: 0 3px 10px rgb(0, 0, 0, .15);
+}
+
+.btn-store
+{
+      background: none;
+      border: 1px solid rgb(240, 240, 240);
+      color: var(--store-font);
+}
+
+.btn-store:hover 
+{
+      
+      color: var(--store-theme);
+}
+
+.btn-store:focus 
+{
+      background: var(--store-app-background);
+      box-shadow: none;
+      border-color: var(--store-theme);
+}
+
+.store-input
+{
+      border: 1px solid rgb(240, 240, 240);
+      color: var(--store-theme);
+}
+
+.store-input:focus
+{
+      box-shadow: none;
+      border-color: var(--store-theme);
+}
+
+.store-input + .help-block
+{
+      position: absolute;
+      width: 500px;
+      color: red;
+      right: calc(100% + 10px);
+      padding: 13px;
+      height: 50px;
+      top: calc(50% - (50px / 2));
+      font-size: 1rem;
+      text-align: right;
+}
+
+.fadein
+{
+      animation-name: FadeAppIn;
+      animation-duration: .5s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+}
+
+.fadeout
+{
+      opacity: 0;
+      animation-name: FadeAppOut;
+      animation-duration: .5s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+}
+
+@keyframes FadeAppIn
+{
+      from {
+            opacity: 0;
+            transform: scale(0.8);
+      }
+      to {
+            opacity: 1;
+            transform: scale(1);
+      }
+}
+
+@keyframes FadeAppOut
+{
+      from {
+            opacity: 1;
+            transform: scale(1);
+      }
+      to {
+            opacity: 0;
+            transform: scale(0.8);
+      }
+}

@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         ]); ?>
         <div class="input-group">
             <div class="input-group-prepend">
-                <button id="StoreSearchDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ID</button>
+                <button id="StoreSearchDropdown" class="btn btn-store store-dropdown dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ID</button>
                 <div id="StoreSearchDropdownItems" class="dropdown-menu">
                     <button class="dropdown-item search" type="button" data-provider="ID">ID</button>
                     <button class="dropdown-item search" type="button" data-provider="Title">Title</button>
